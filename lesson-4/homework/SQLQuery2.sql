@@ -71,11 +71,6 @@ SELECT'Ramesh', '05/09/1983';
 
 SELECT * FROM EmpBirth;
 
-SELECT EmpId, EmpName, BirthDate
-FROM EmpBirth
-WHERE MONTH(BirthDate) = 5 
-AND DAY(BirthDate) BETWEEN 7 AND 15;
-
 -- task-4
 create table letters
 (letter char(1));
@@ -84,13 +79,12 @@ insert into letters
 values ('a'), ('a'), ('a'), 
   ('b'), ('c'), ('d'), ('e'), ('f');
 
-select * from letters;
 
 -- 4.1
 SELECT letter
 FROM letters
 ORDER BY CASE 
-    WHEN letter = 'b' THEN 0  -- 'b' harfini birinchi joyga qo‘ydim
+    WHEN letter = 'b' THEN 0  -- 'b' harfini birinchi joyga qoï¿½ydim
     ELSE 1 
 END, letter;
 
@@ -98,7 +92,7 @@ END, letter;
 SELECT letter
 FROM letters
 ORDER BY CASE 
-    WHEN letter = 'b' THEN 1  -- 'b' harfini oxiriga qo‘ydim
+    WHEN letter = 'b' THEN 1  -- 'b' harfini oxiriga qoï¿½ydim
     ELSE 0 
 END, letter;
 
@@ -109,11 +103,11 @@ WITH OrderedLetters AS (
     FROM letters
     WHERE letter <> 'b'  -- 'b' dan boshqa hamma harflarni tartibladim
 )
-SELECT letter FROM OrderedLetters WHERE rn < 3  -- 1 va 2-o‘rindegi harflar
+SELECT letter FROM OrderedLetters WHERE rn < 3  -- 1 va 2-oï¿½rindegi harflar
 UNION ALL
-SELECT 'b'  -- 3-o‘ringa 'b' ni qo‘shdim
+SELECT 'b'  -- 3-oï¿½ringa 'b' ni qoï¿½shdim
 UNION ALL
-SELECT letter FROM OrderedLetters WHERE rn >= 3;  -- Qolgan harflar 4-o‘rindan keyin kelsin
+SELECT letter FROM OrderedLetters WHERE rn >= 3;  -- Qolgan harflar 4-oï¿½rindan keyin kelsin
 
 
 
